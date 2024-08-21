@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will's amazing website</title>
+    <style>
+        body {
+            background-color: #2c3e50;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #ffffff;
+        }
+        #explanation {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 80%;
+            max-width: 600px;
+        }
+        #explanation h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #explanation p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        #explanation p a {
+            color: #ffffff;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        #explanation p a:hover {
+            text-decoration: none;
+        }
+        .download-button {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .download-button:hover {
+            background-color: #27ae60;
+        }
+        #linkList {
+            width: 80%;
+            max-width: 600px;
+        }
+        .link-container {
+            background-color: #34495e;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .link-container a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .favicon {
+            width: 16px;
+            height: 16px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="explanation">
+        <h1>Will's amazing website</h1>
+        <p>This is a list of free movie streaming sites that I'll update every now and then. If you're using an iPhone, download <a href="https://adguard.com" target="_blank">AdGuard</a> to stop ads</p>
+        <a href="https://apps.apple.com/app/adguard-adblock-privacy/id1047223162" class="download-button" target="_blank">Download</a>
+    </div>
+    
+    <div id="linkList"></div>
+
+    <script>
+        // Replace this array with your actual list of links
+        const links = [
+'https://bingemaster.netlify.app/',
+'https://binged.in/',
+'https://binged.live/',
+'https://binge.lol/',
+'https://www.braflix.ru/',
+'https://cataz.to/',
+'https://cinezone.to/',
+'https://dashflix.top/',
+'https://dopebox.to/',
+'https://faragski.com/',
+'https://fmovies-hd.to/',
+'https://fflixs.xyz/',
+'https://flixhq.click/',
+'https://fsharetv.co/',
+'https://goku.sx/',
+'https://gomovies.sx/',
+'https://www.gstream.uk/',
+'https://himovies.sx/',
+'https://hurawatchz.to/',
+'https://hydrahd.com/',
+'https://kimcartoon.li/',
+'https://kipflix.space/',
+'https://letflix.tv/',
+'https://lookmovie2.to/',
+'https://proxymirrorlookmovie.github.io/',
+'https://ww2.m4ufree.com/',
+'https://movieworld.pl/',
+'https://moviebeamz.com/',
+'https://movietly.com/',
+'https://iosmirror.cc/',
+'https://nepu.to/',
+'https://www.net3lix.com/',
+'https://nites.is/',
+'https://nunflix.com/',
+'https://onionplay.se/',
+'https://onionplay.network/',
+'https://www.pressplay.top/',
+'https://putlocker.pe/',
+'https://rgshows.vercel.app/',
+'https://rivestream.live/',
+'https://rivestream.xyz/',
+'https://rivestream.netlify.app/',
+'https://cinemaos-v2.vercel.app/',
+'https://sflix.to/',
+'https://www.showboxmovies.net/',
+'https://smashystream.com/',
+'https://smashystream.xyz/',
+'https://flix.smashystream.xyz/',
+'https://smashy.stream/',
+'https://soaper.tv/',
+'https://watch.streamflix.one/',
+'https://streamlairtv.com/',
+'https://uflix.cc/',
+'https://uniquestream.net/',
+'https://uflix.cc/',
+'https://viewvault.org/',
+'https://vidplay.org/',
+'https://www.watching.zone/',
+'https://watchug.com/',
+'https://xpwatch-v2.pages.dev/',
+'https://yesmovies.ag/',
+'https://yassflix.live/',
+'https://yuppow.com/',
+        ];
+
+        const linkList = document.getElementById('linkList');
+
+        links.forEach((link, index) => {
+            const linkContainer = document.createElement('div');
+            linkContainer.className = 'link-container';
+
+            const linkElement = document.createElement('a');
+            linkElement.href = link;
+            linkElement.textContent = link;
+            linkElement.target = '_blank';
+
+            const favicon = document.createElement('img');
+            favicon.src = `https://www.google.com/s2/favicons?domain=${link}`;
+            favicon.className = 'favicon';
+            favicon.alt = 'Favicon';
+
+            linkContainer.appendChild(linkElement);
+            linkContainer.appendChild(favicon);
+            linkList.appendChild(linkContainer);
+
+            // Animate the container
+            setTimeout(() => {
+                linkContainer.style.opacity = '1';
+                linkContainer.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
+    </script>
+</body>
+</html>
